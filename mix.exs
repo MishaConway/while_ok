@@ -4,7 +4,7 @@ defmodule WhileOk.MixProject do
   def project do
     [
       app: :while_ok,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.12-rc",
       description: description(),
       package: package(),
@@ -23,8 +23,7 @@ defmodule WhileOk.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
@@ -37,8 +36,8 @@ defmodule WhileOk.MixProject do
       # This option is only needed when you don't want to use the OTP application name
       name: "while_ok",
       # These are the default files included in the package
-      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src),
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE*
+                 CHANGELOG*),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/MishaConway/while_ok"}
     ]

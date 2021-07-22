@@ -6,7 +6,9 @@ defmodule WhileOk do
       [] -> return_when_all_ok
       [head | tail] ->
         case func.(head) do
-          {:ok, _ } -> each(tail, func, opts)
+          {:ok, _} -> each(tail, func, opts)
+          {:ok} -> each(tail, func, opts)
+          :ok -> each(tail, func, opts)
           {:error, _} = err -> err
         end
     end
