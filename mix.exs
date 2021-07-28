@@ -4,7 +4,7 @@ defmodule WhileOk.MixProject do
   def project do
     [
       app: :while_ok,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.12-rc",
       description: description(),
       package: package(),

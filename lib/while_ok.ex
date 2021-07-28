@@ -13,4 +13,17 @@ defmodule WhileOk do
         end
     end
   end
+
+  def map(enumerable, func), do: map_ex(enumerable, func, [])
+
+  defp map_ex(enumerable, func, already_mapped) do
+    case enumerable do
+      [] -> {:ok, already_mapped}
+      [head | tail] ->
+        case func.(head) do
+          {:ok, mapped_result} -> map_ex(tail, func, already_mapped ++ [mapped_result])
+          {:error, _} = err -> err
+        end
+    end
+  end
 end
